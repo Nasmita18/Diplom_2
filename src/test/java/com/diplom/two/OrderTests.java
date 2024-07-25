@@ -147,24 +147,4 @@ public class OrderTests {
                 .then()
                 .statusCode(202);
     }
-
-//    @Step("Получение списка идентификаторов ингредиентов")
-//    private List<String> getIngredientIds() {
-//        Response response = given()
-//                .when()
-//                .get("/api/ingredients")
-//                .then()
-//                .statusCode(200)
-//                .extract()
-//                .response();
-//
-//        List<Map<String, String>> ingredients = response.jsonPath().getList("data");
-//        List<String> ingredientIds = new ArrayList<>();
-//
-//        for (Map<String, String> ingredient : ingredients) {
-//            ingredientIds.add(ingredient.get("_id"));
-//        }
-//
-//        return ingredientIds;
-//    }
 }

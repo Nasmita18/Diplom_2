@@ -15,7 +15,6 @@ import static org.junit.Assert.*;
 public class UserCreationTests {
 
     private String accessToken;
-    private String refreshToken;
 
     @Before
     public void setup() {
@@ -56,7 +55,6 @@ public class UserCreationTests {
         UserRs responseBody = response.getBody().as(UserRs.class);
 
         accessToken = responseBody.getAccessToken();
-        refreshToken = responseBody.getRefreshToken();
 
         assertEquals(200, response.getStatusCode());
         assertTrue(responseBody.isSuccess());
@@ -100,7 +98,6 @@ public class UserCreationTests {
         UserRs firstResponseBody = firstResponse.getBody().as(UserRs.class);
 
         accessToken = firstResponseBody.getAccessToken();
-        refreshToken = firstResponseBody.getRefreshToken();
 
         assertTrue(firstResponseBody.isSuccess());
         assertEquals(email, firstResponseBody.getUser().getEmail());
